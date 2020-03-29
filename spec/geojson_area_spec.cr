@@ -58,4 +58,15 @@ describe GeoJSON::Area do
     area = GeoJSON::Area.area(polygon)
     area.should eq(2366726096087.807)
   end
+
+  describe GeoJSON::Object do
+    it "#area" do
+      polygon = GeoJSON::Polygon.new([
+        [[-10.0, -10.0], [10.0, -10.0], [10.0, 10.0], [-10.0, -10.0]],
+        [[-1.0, -2.0], [3.0, -2.0], [3.0, 2.0], [-1.0, -2.0]],
+      ])
+
+      polygon.area.should eq(2366726096087.807)
+    end
+  end
 end

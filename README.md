@@ -23,7 +23,20 @@ Calculate the area inside of any [GeoJSON](https://github.com/geocrystal/geojson
 require "geojson_area"
 ```
 
-`GeoJSON::Area.area()` accept any `GeoJSON` object, and returns contained area as square meters.
+This adds `area` method for all `GeoJSON` objects:
+
+```crystal
+polygon = GeoJSON::Polygon.new([
+  [[-10.0, -10.0], [10.0, -10.0], [10.0, 10.0], [-10.0,-10.0]],
+  [[-1.0, -2.0], [3.0, -2.0], [3.0, 2.0], [-1.0,-2.0]]
+])
+
+polygon.area
+# => 2366726096087.807
+```
+
+Also you can use `GeoJSON::Area.area()` directly.
+This method accept any `GeoJSON` object, and returns contained area as square meters.
 
 ```crystal
 polygon = GeoJSON::Polygon.new([
