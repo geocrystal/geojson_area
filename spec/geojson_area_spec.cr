@@ -48,4 +48,14 @@ describe GeoJSON::Area do
 
     area.zero?.should be_truthy
   end
+
+  it "computes the area of polygon from readme" do
+    polygon = GeoJSON::Polygon.new([
+      [[-10.0, -10.0], [10.0, -10.0], [10.0, 10.0], [-10.0, -10.0]],
+      [[-1.0, -2.0], [3.0, -2.0], [3.0, 2.0], [-1.0, -2.0]],
+    ])
+
+    area = GeoJSON::Area.area(polygon)
+    area.should eq(2366726096087.807)
+  end
 end

@@ -1,6 +1,9 @@
-# geojson_area
+# GeoJSON::Area
 
-TODO: Write a description here
+[![Build Status](https://travis-ci.org/geocrystal/geojson_area.svg?branch=master)](https://travis-ci.org/geocrystal/geojson_area)
+[![License](https://img.shields.io/github/license/geocrystal/geojson_area.svg)](https://github.com/geocrystal/geojson_area/blob/master/LICENSE)
+
+Calculate the area inside of any [GeoJSON](https://github.com/geocrystal/geojson) geometry.
 
 ## Installation
 
@@ -9,7 +12,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      geojson_area:
-       github: your-github-user/geojson_area
+       github: geocrystal/geojson_area
    ```
 
 2. Run `shards install`
@@ -20,15 +23,21 @@ TODO: Write a description here
 require "geojson_area"
 ```
 
-TODO: Write usage instructions here
+`GeoJSON::Area.area()` accept any `GeoJSON` object, and returns contained area as square meters.
 
-## Development
+```crystal
+polygon = GeoJSON::Polygon.new([
+  [[-10.0, -10.0], [10.0, -10.0], [10.0, 10.0], [-10.0,-10.0]],
+  [[-1.0, -2.0], [3.0, -2.0], [3.0, 2.0], [-1.0,-2.0]]
+])
 
-TODO: Write development instructions here
+GeoJSON::Area.area(polygon)
+# => 2366726096087.807
+```
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/geojson_area/fork>)
+1. Fork it (<https://github.com/geocrystal/geojson_area/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +45,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Anton Maminov](https://github.com/your-github-user) - creator and maintainer
+- [Anton Maminov](https://github.com/mamantoha) - creator and maintainer
