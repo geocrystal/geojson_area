@@ -1,5 +1,6 @@
 # GeoJSON::Area
 
+![Crystal CI](https://github.com/geocrystal/geojson_area/workflows/Crystal%20CI/badge.svg)
 [![License](https://img.shields.io/github/license/geocrystal/geojson_area.svg)](https://github.com/geocrystal/geojson_area/blob/master/LICENSE)
 
 Calculate the area inside of any [GeoJSON](https://github.com/geocrystal/geojson) geometry.
