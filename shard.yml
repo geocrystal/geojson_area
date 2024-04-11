@@ -1,10 +1,10 @@
 name: geojson_area
-version: 0.1.1
+version: 0.2.0
 
 authors:
   - Anton Maminov <anton.maminov@gmail.com>
 
-crystal: ">= 0.35.1"
+crystal: ">= 1.0.0"
 
 dependencies:
   geojson:
