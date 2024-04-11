@@ -4,8 +4,8 @@ describe GeoJSON::Area do
   illinois_file = File.read("#{__DIR__}/fixtures/illinois.json")
   all_file = File.read("#{__DIR__}/fixtures/all.json")
 
-  illinois_area = 145978332359.36746
-  all_area = 511207893395811.06
+  illinois_area = 145652224192.43988
+  all_area = 510065880972871.8
 
   it "computes the area of illinois" do
     object = GeoJSON::Object.from_json(illinois_file)
@@ -56,7 +56,7 @@ describe GeoJSON::Area do
     ])
 
     area = GeoJSON::Area.area(polygon)
-    area.should eq(2366726096087.807)
+    area.should eq(2361438950411.1772)
   end
 
   describe GeoJSON::Object do
@@ -66,7 +66,7 @@ describe GeoJSON::Area do
         [[-1.0, -2.0], [3.0, -2.0], [3.0, 2.0], [-1.0, -2.0]],
       ])
 
-      polygon.area.should eq(2366726096087.807)
+      polygon.area.should eq(2361438950411.1772)
     end
   end
 end
