@@ -9,6 +9,8 @@ crystal: ">= 0.35.1"
 dependencies:
   geojson:
     github: geocrystal/geojson
+  ring_area:
+    github: geocrystal/ring_area
 
 development_dependencies:
   ameba:

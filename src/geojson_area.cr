@@ -1,4 +1,5 @@
 require "geojson"
+require "ring_area"
 require "./geojson/area"
 require "./geojson/object"
 
