@@ -11,6 +11,7 @@ dependencies:
     github: geocrystal/geojson
   ring_area:
     github: geocrystal/ring_area
+    version: ">= 0.2.1"
 
 development_dependencies:
   ameba:

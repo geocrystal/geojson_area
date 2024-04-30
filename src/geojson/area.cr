@@ -5,7 +5,7 @@ module GeoJSON
     extend self
 
     # Given a Geometry object, return contained area as square meters.
-    def area(object : GeoJSON::Object) : Float64
+    def area(object : GeoJSON::Object) : Float32 | Float64
       case object
       when GeoJSON::Polygon
         polygon_area(object.coordinates)
@@ -22,7 +22,7 @@ module GeoJSON
       end
     end
 
-    private def polygon_area(coordinates) : Float64
+    private def polygon_area(coordinates) : Float32 | Float64
       coordinates.each_with_index.reduce(0.0) do |area, (ring, i)|
         if i == 0
           # exterior ring
@@ -34,10 +34,10 @@ module GeoJSON
       end
     end
 
-    private def ring_area(coordinates) : Float64
+    private def ring_area(coordinates) : Float32 | Float64
       coords = coordinates.map { |coordinate| [coordinate.longitude, coordinate.latitude] }
 
-      RingArea.ring_area(coords)
+      RingArea.ring_area(coords).to_meters
     end
   end
 end
