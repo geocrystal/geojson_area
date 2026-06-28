@@ -13,8 +13,4 @@ dependencies:
     github: geocrystal/ring_area
     version: ">= 0.2.1"
 
-development_dependencies:
-  ameba:
-    github: crystal-ameba/ameba
-
 license: MIT
